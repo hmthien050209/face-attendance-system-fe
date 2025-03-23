@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import OverallCountChart from '@/components/Home/DailyCountChart.vue'
-import DetailedView from '@/components/Home/DetailedView.vue'
+import DetailedView from '@/components/Home/DetailedBox.vue'
 import { ref } from 'vue'
 
 const selectedDate = ref<Date | null>(null)

@@ -3,6 +3,7 @@ import { Card } from 'primevue'
 import { testDailyCount, testDailyEntries } from '@/testData'
 import { computed } from 'vue'
 import { isSameDate } from '@/utils/isSameDate'
+
 const props = defineProps<{
   date: Date | null
 }>()
@@ -30,16 +31,18 @@ const absentStudents = computed(() => {
       <h1>Detailed view</h1>
     </template>
     <template #content>
-      <div v-if="date">
-        <p>Date: {{ date.toLocaleDateString() }}</p>
-        <p>Number of students: {{ statsOfDate?.numberOfStudents }}</p>
-        <p>Student count: {{ statsOfDate?.studentCount }}</p>
-        <p>Absent students: {{ absentStudents.length }} students:</p>
-        <ol class="ml-2 list-decimal">
-          <li v-for="student in absentStudents" :key="student.uuid">{{ student.name }}</li>
-        </ol>
+      <div class="p-2">
+        <div v-if="date">
+          <p>Date: {{ date.toLocaleDateString() }}</p>
+          <p>Number of students: {{ statsOfDate?.numberOfStudents }}</p>
+          <p>Student count: {{ statsOfDate?.studentCount }}</p>
+          <p>Absent students: {{ absentStudents.length }} students:</p>
+          <ol class="ml-2 list-decimal">
+            <li v-for="student in absentStudents" :key="student.uuid">{{ student.name }}</li>
+          </ol>
+        </div>
+        <p v-else>No date selected.</p>
       </div>
-      <p v-else>No date selected.</p>
     </template>
   </Card>
 </template>

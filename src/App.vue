@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { Toast } from 'primevue'
-import { RouterView } from 'vue-router'
+import { RouterView, useRouter } from 'vue-router'
 import { Menubar } from 'primevue'
-import { type MenuItem } from 'primevue/menuitem'
 
-const menuItems: MenuItem[] = [
-  { label: 'Status', icon: 'pi pi-chart-bar', to: '/' },
-  { label: 'Admin', icon: 'pi pi-info-circle', to: '/admin' },
+const router = useRouter()
+
+const menuItems = [
+  { label: 'Status', icon: 'pi pi-chart-bar', command: () => router.push('/') },
+  { label: 'Admin', icon: 'pi pi-info-circle', command: () => router.push('/admin') },
 ]
 </script>
 

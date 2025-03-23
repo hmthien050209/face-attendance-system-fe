@@ -10,6 +10,7 @@ import PrimeVue from 'primevue/config'
 import App from './App.vue'
 import router from './router'
 import 'primeicons/primeicons.css'
+import { VueQueryPlugin } from '@tanstack/vue-query'
 import { generateData } from './testData'
 
 // Define PrimeVue preset
@@ -47,7 +48,7 @@ app.use(PrimeVue, {
 app.use(ToastService)
 app.use(createPinia())
 app.use(router)
+app.use(VueQueryPlugin)
 
 app.mount('#app')
-
 generateData()

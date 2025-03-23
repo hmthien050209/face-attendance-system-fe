@@ -19,6 +19,7 @@
     "@fontsource-variable/roboto-flex": "^5.2.5",
     "@primeuix/themes": "^1.0.0",
     "@tailwindcss/vite": "^4.0.14",
+    "@tanstack/vue-query": "^5.69.0",
     "chart.js": "^4.4.8",
     "husky": "^9.1.7",
     "pinia": "^3.0.1",
@@ -52,7 +53,8 @@
   "packageManager": "pnpm@10.6.4+sha512.da3d715bfd22a9a105e6e8088cfc7826699332ded60c423b14ec613a185f1602206702ff0fe4c438cb15c979081ce4cb02568e364b15174503a63c7a8e2a5f6c",
   "pnpm": {
     "onlyBuiltDependencies": [
-      "esbuild"
+      "esbuild",
+      "vue-demi"
     ]
   }
 }
